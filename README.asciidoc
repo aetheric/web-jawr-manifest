@@ -1,0 +1,26 @@
+Aetheric Web: JAWR Manifest
+===========================
+
+This little utility adds a servlet that generates an HTML5 cache manifest based on what resources are available to JAWR
+when it is requested. In addition, it uses etag and comment hashes to make sure that if any of the resources change,
+that change causes the manifest content to be re-downloaded as per the manifest spec.
+
+.Maven Dependency Inclusion
+```xml
+<dependency>
+	<groupId>nz.co.aetheric.web</groupId>
+	<artifactId>jawr-manifest</artifactId>
+	<version>${version.jawr_manifest}</version>
+</dependency>
+```
+
+.Web-fragment Inclusion
+```xml
+<ordering>
+	<after>
+		<name>JawrManifest</name>
+		...
+	</after>
+	...
+</ordering>
+```
